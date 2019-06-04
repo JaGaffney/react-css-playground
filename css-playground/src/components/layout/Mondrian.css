@@ -1,0 +1,73 @@
+.mondrian-container{
+    justify-content: center;
+    margin: 5rem;
+}
+
+.mondrian-wrapper{
+    display: grid;
+    grid-gap: 0.5rem;
+    background: black;
+    border: solid 0.5rem black;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-auto-rows: 90px;
+    grid-auto-flow: dense;
+}
+
+.mondrian-button-container{
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.mondrian-button-container button{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    height: 2rem;
+    width: 40%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.mondrian-button-container button:hover{
+    background-color: var(--primary-color);
+}
+.mondrian-button-container > * {
+    margin:5px;
+}
+
+.mondrian-buttons{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+.mondrian-buttons button {
+    flex: 1;
+}
+.mondrian-buttons h1 {
+    flex: 1 1 75%;
+    text-align: center;
+}
+
+
+.mondrian-buttons button{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1000px){
+    .mondrian-container{
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 550px){
+    .mondrian-container{
+        margin: 0.2rem;
+    }
+}
