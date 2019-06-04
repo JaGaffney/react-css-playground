@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/JaGaffney/react-css-playground/static/css/main.a4e8b079.chunk.css",
-    "main.js": "/JaGaffney/react-css-playground/static/js/main.c8778fde.chunk.js",
-    "main.js.map": "/JaGaffney/react-css-playground/static/js/main.c8778fde.chunk.js.map",
-    "runtime~main.js": "/JaGaffney/react-css-playground/static/js/runtime~main.2a7c7f68.js",
-    "runtime~main.js.map": "/JaGaffney/react-css-playground/static/js/runtime~main.2a7c7f68.js.map",
-    "static/js/2.8a4eca8d.chunk.js": "/JaGaffney/react-css-playground/static/js/2.8a4eca8d.chunk.js",
-    "static/js/2.8a4eca8d.chunk.js.map": "/JaGaffney/react-css-playground/static/js/2.8a4eca8d.chunk.js.map",
-    "index.html": "/JaGaffney/react-css-playground/index.html",
-    "precache-manifest.2b2f9f8462b59f65f84cc354f7a9a5f6.js": "/JaGaffney/react-css-playground/precache-manifest.2b2f9f8462b59f65f84cc354f7a9a5f6.js",
-    "service-worker.js": "/JaGaffney/react-css-playground/service-worker.js",
-    "static/css/main.a4e8b079.chunk.css.map": "/JaGaffney/react-css-playground/static/css/main.a4e8b079.chunk.css.map"
+    "main.css": "/react-css-playground/static/css/main.a4e8b079.chunk.css",
+    "main.js": "/react-css-playground/static/js/main.2d23d791.chunk.js",
+    "main.js.map": "/react-css-playground/static/js/main.2d23d791.chunk.js.map",
+    "runtime~main.js": "/react-css-playground/static/js/runtime~main.2fc70888.js",
+    "runtime~main.js.map": "/react-css-playground/static/js/runtime~main.2fc70888.js.map",
+    "static/js/2.8a4eca8d.chunk.js": "/react-css-playground/static/js/2.8a4eca8d.chunk.js",
+    "static/js/2.8a4eca8d.chunk.js.map": "/react-css-playground/static/js/2.8a4eca8d.chunk.js.map",
+    "index.html": "/react-css-playground/index.html",
+    "precache-manifest.54a0d2a2512547fb9fab51bf30e160a3.js": "/react-css-playground/precache-manifest.54a0d2a2512547fb9fab51bf30e160a3.js",
+    "service-worker.js": "/react-css-playground/service-worker.js",
+    "static/css/main.a4e8b079.chunk.css.map": "/react-css-playground/static/css/main.a4e8b079.chunk.css.map"
   }
 }
