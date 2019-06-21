@@ -1,0 +1,155 @@
+.monopoly-container{
+    justify-content: center;
+    margin: 5rem;
+    padding-bottom: 5rem;
+}
+
+.monopoly-wrapper{
+    display: grid;
+    grid-gap: calc(0.5vw + 10px);
+    background: white;
+    border: none;
+    grid-template-columns: repeat(5, 8vw);
+    grid-template-rows: repeat(5, 8vw);
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    margin: 0 0 1vw;
+}
+
+.monopoly button{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    height: 2rem;
+}
+
+.monopoly-wrapper li{
+    border: solid black 3px;
+    font-size: calc(1vw + 10px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    /* flex-wrap: wrap; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.monopoly-wrapper li:nth-child(1){
+    grid-column: 1;
+    grid-row: 1;
+    background-color: orange;
+}
+.monopoly-wrapper li:nth-child(2){
+    grid-column: 2;
+    grid-row: 1;
+    background: linear-gradient(to top, red 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(3){
+    grid-column: 3;
+    grid-row: 1;
+    background: linear-gradient(to top, red 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(4){
+    grid-column: 4;
+    grid-row: 1;
+    background: linear-gradient(to top, red 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(5){
+    grid-column: 5;
+    grid-row: 1;
+    background-color: orange;
+}
+.monopoly-wrapper li:nth-child(6){
+    grid-column: 5;
+    grid-row: 2;
+    background: linear-gradient(to bottom, blue 20%, white 20%, white 20%, white 40%);
+    transform: rotate(270deg)
+}
+.monopoly-wrapper li:nth-child(7){
+    grid-column: 5;
+    grid-row: 3;
+    background: linear-gradient(to right, blue 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(8){
+    grid-column: 5;
+    grid-row: 4;
+    background: linear-gradient(to right, blue 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(9){
+    grid-column: 5;
+    grid-row: 5;
+    background-color: orange;
+}
+.monopoly-wrapper li:nth-child(10){
+    grid-column: 4;
+    grid-row: 5;
+    background: linear-gradient(to bottom, green 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(11){
+    grid-column: 3;
+    grid-row: 5;
+    background: linear-gradient(to bottom, green 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(12){
+    grid-column: 2;
+    grid-row: 5;
+    background: linear-gradient(to bottom, green 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(13){
+    grid-column: 1;
+    grid-row: 5;
+    background-color: orange;
+}
+.monopoly-wrapper li:nth-child(14){
+    grid-column: 1;
+    grid-row: 4;
+    background: linear-gradient(to left, yellow 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(15){
+    grid-column: 1;
+    grid-row: 3;
+    background: linear-gradient(to left, yellow 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(16){
+    grid-column: 1;
+    grid-row: 2;
+    background: linear-gradient(to left, yellow 20%, white 20%, white 20%, white 40%);
+}
+.monopoly-wrapper li:nth-child(19){
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 3;
+    background: white;
+    justify-content: center;
+    align-content: flex-start;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.monopoly-wrapper li:nth-child(19) div{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 50%;
+}
+
+.monopoly-owner-container{
+}
+
+.dice{
+    cursor: pointer;
+    height: 10rem;
+    width: 10rem;
+    background: red;
+    border: solid 5px black;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

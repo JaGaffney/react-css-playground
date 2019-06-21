@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Header from '../src/components/layout/Header';
-// import Header from '../src/components/layout/Header2';
 import Mondrian from '../src/components/layout/Mondrian';
+import Monopoly from '../src/components/layout/Monopoly';
 import './App.css';
 
 function App() {
@@ -18,6 +18,12 @@ function App() {
 
           <section className="mondrian">
             <Mondrian />
+          </section>
+
+          <div className="bar-break"></div>  
+
+          <section className="monopoly">
+            <Monopoly />
           </section>
 
           <div className="bar-break"></div>  

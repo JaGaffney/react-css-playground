@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Lottie from 'react-lottie';
-import gitHubLogo from './github.json'
-import linkedInLogo from './linkedin.json'
+import gitHubLogo from './animations/github.json'
+import linkedInLogo from './animations/linkedin.json'
 
 import './Header.css'
 

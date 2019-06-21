@@ -75,6 +75,12 @@
     padding-bottom: 30rem;
 }
 
+.monopoly{
+    background-color: var(--light-color);
+    padding: 5rem 5vw 2rem; 
+    padding-bottom: 30rem;
+}
+
 
 @media (max-width: 820px){
   header {

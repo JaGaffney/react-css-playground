@@ -1,0 +1,185 @@
+import React, { useState } from 'react'
+import Lottie from 'react-lottie';
+
+import './Monopoly.css'
+import gitHubLogo from './animations/github.json'
+import linkedInLogo from './animations/linkedin.json'
+
+export default function Monopoly() {
+
+    const [playerGo, setPlayerGo] = useState(true) // ture for player 1
+    const [player1Icon, setPlayer1Icon] = useState('player1')
+    const [player2Icon, setPlayer2Icon] = useState('player2')
+    const [player1Location, setPlayer1Location] = useState([1, 1, 1])
+    const [player2Location, setPlayer2Location] = useState([1, 1, 1])
+    const [currentRoll, setCurrentRoll] = useState('click me')
+    const [tiles, setCurrentTiles] = useState({
+        tile1: {cost: "", location: [1, 1], owner: "Start"},
+        tile2: {cost: "$20", location: [2, 1], owner: ""},
+        tile3: {cost: "$20", location: [3, 1], owner: ""},
+        tile4: {cost: "$20", location: [4, 1], owner: ""},
+        tile5: {cost: "", location: [5, 1], owner: "Free"},
+        tile6: {cost: "$20", location: [5, 2], owner: ""},
+        tile7: {cost: "$20", location: [5, 3], owner: ""},
+        tile8: {cost: "$20", location: [5, 4], owner: ""},
+        tile9: {cost: "", location: [5, 5], owner: "Free"},
+        tile10: {cost: "$20", location: [4, 5], owner: ""},
+        tile11: {cost: "$20", location: [3, 5], owner: ""},
+        tile12: {cost: "$20", location: [2, 5], owner: ""},
+        tile13: {cost: "", location: [1, 5], owner: "Free"},
+        tile14: {cost: "$20", location: [1, 4], owner: ""},
+        tile15: {cost: "$20", location: [1, 3], owner: ""},
+        tile16: {cost: "$20", location: [1, 2], owner: ""},
+    })
+
+    const locationChecker = (player, location) => {
+        Object.keys(tiles).forEach( (tile, index) => {
+            if (tiles[tile]['location'][0] === location[0] && tiles[tile]['location'][1] === location[1] && tiles[tile]['owner'] === ''){
+                setCurrentTiles({...tiles, [tile]: {owner: player, location: tiles[tile]['location'], cost: tiles[tile]['cost']}})
+            } 
+        })
+    }
+
+    const playerMovement = (player, location, setter) => {
+        // needs to declare the roll insitaly due to delay when settings
+        let roll = Math.floor(Math.random() * 3) + 1;
+        setCurrentRoll(roll)
+
+        let loc1 = 1
+        let loc2 = 1
+        // top side
+        if (location[2] === 1) {
+            console.log("top side")
+            let tempLocation = location[0] + roll
+            if (tempLocation >= 6) {
+                let newLocation = tempLocation - 5
+                loc1 = 5
+                loc2 = newLocation
+                setter([5, newLocation, 2])
+            } else {
+                loc1 = tempLocation
+                loc2 = location[1]
+                setter([tempLocation, location[1], location[2]])  
+            }
+            locationChecker(player, [loc1, loc2])
+            return
+        }
+        // right side
+        if (location[2] === 2) {
+            console.log("right side")
+            let tempLocation = location[1] + roll
+            if (tempLocation >= 6) {
+                let newLocation = tempLocation - 5
+                loc1 = newLocation
+                loc2 = 5
+                setter([newLocation, 5, 3])
+            } else {
+                loc1 = location[0]
+                loc2 = tempLocation
+                setter([location[0], tempLocation, location[2]])  
+            }
+            locationChecker(player, [loc1, loc2])
+            return
+        }
+        // bottom side
+        if (location[2] === 3) {
+            console.log("bottom side")
+            let tempLocation = location[0] - roll
+            if (tempLocation <= 1) {
+                let newLocation = tempLocation + 4
+                loc1 = 1
+                loc2 = newLocation
+                setter([1, newLocation, 4])
+            } else {
+                loc1 = tempLocation
+                loc2 = location[1]
+                setter([tempLocation, location[1], location[2]])  
+            }
+            locationChecker(player, [loc1, loc2])
+            return
+        }
+        // left side
+        if (location[2] === 4) {
+            console.log('left side')
+            let tempLocation = location[1] - roll
+            if (tempLocation <= 1) {
+                let newLocation = tempLocation + 4
+                loc1 = tempLocation
+                loc2 = 1
+                setter([tempLocation, 1, 1])
+            } else {
+                loc1 = location[0]
+                loc2 = tempLocation
+                setter([location[0], tempLocation, location[2]])  
+            }
+            locationChecker(player, [loc1, loc2])
+            return
+        }   
+    }
+    
+    const onDiceRollHandler = () => {
+        // decides on which players go it is
+        (playerGo ? playerMovement(player1Icon, player1Location, setPlayer1Location) : playerMovement(player2Icon, player2Location, setPlayer2Location))
+        setPlayerGo(!playerGo)
+        
+    }
+
+    // creates the initial players
+    let player1 = (<li style={{"gridColumn": player1Location[0], "gridRow": player1Location[1], alignItems: "flex-start"}}>Player 1</li>)
+    let player2 = (<li style={{"gridColumn": player2Location[0], "gridRow": player2Location[1], alignItems: "flex-start", paddingTop: "3rem"}}>Player 2</li>)
+
+    let dice = (<div>
+        <h1>Turn: {(playerGo ? "Player 1" : "Player 2")}</h1>
+        <div className="dice">{currentRoll}</div>
+    </div>
+    )
+
+    // const lottie = (animation) => {
+    //     return (<div className="monopoly-owner-container">
+    //         <Lottie 
+    //             options={{
+    //             loop: false,
+    //             autoplay: true, 
+    //             animationData: animation,
+    //             }}
+    //         height={50}
+    //     />          
+    //     </div>)
+    // } 
+
+    return (
+        <div className="monopoly-container">
+           <h1>Monopoly Generator with Grid</h1> 
+            <br />
+            
+
+        <ul className="monopoly-wrapper"> 
+            <li><span>{tiles.tile1.cost}</span>{tiles.tile1.owner}</li>
+            <li><span>{tiles.tile2.cost}</span>{tiles.tile2.owner}</li>
+            <li><span>{tiles.tile3.cost}</span><div className="monopoly-owner-container">{tiles.tile3.owner}</div></li>
+            <li><span>{tiles.tile4.cost}</span><div className="monopoly-owner-container">{tiles.tile4.owner}</div></li>
+            <li><span>{tiles.tile5.cost}</span><div className="monopoly-owner-container">{tiles.tile5.owner}</div></li>
+            <li><span>{tiles.tile6.cost}</span><div className="monopoly-owner-container">{tiles.tile6.owner}</div></li>
+            <li><span>{tiles.tile7.cost}</span><div className="monopoly-owner-container">{tiles.tile7.owner}</div></li>
+            <li><span>{tiles.tile8.cost}</span><div className="monopoly-owner-container">{tiles.tile8.owner}</div></li>
+            <li><span>{tiles.tile9.cost}</span><div className="monopoly-owner-container">{tiles.tile9.owner}</div></li>
+            <li><span>{tiles.tile10.cost}</span><div>{tiles.tile10.owner}</div></li>
+            <li><span>{tiles.tile11.cost}</span><div>{tiles.tile11.owner}</div></li>
+            <li><span>{tiles.tile12.cost}</span><div>{tiles.tile12.owner}</div></li>
+            <li><span>{tiles.tile13.cost}</span><div>{tiles.tile13.owner}</div></li>
+            <li><span>{tiles.tile14.cost}</span><div>{tiles.tile14.owner}</div></li>
+            <li><span>{tiles.tile15.cost}</span><div>{tiles.tile15.owner}</div></li>
+            <li><span>{tiles.tile16.cost}</span><span>{tiles.tile16.owner}</span></li>
+            {player1}
+            {player2}
+            <li onClick={onDiceRollHandler}>{dice}</li>
+            {/* {itemCreation.map((item, index) => {
+                return mondrianGenerator(index)
+            })} */}
+        </ul>
+
+        </div>
+    )
+}
+
+
