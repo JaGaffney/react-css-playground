@@ -7,12 +7,13 @@ import linkedInLogo from './animations/linkedin.json'
 
 export default function Monopoly() {
 
-    const [playerGo, setPlayerGo] = useState(true) // ture for player 1
+    const [playerGo, setPlayerGo] = useState(true) // true for player 1
     const [player1Color, setPlayer1Color] = useState('yellow')
     const [player2Color, setPlayer2Color] = useState('skyblue')
     const [player1Location, setPlayer1Location] = useState([1, 1, 1])
     const [player2Location, setPlayer2Location] = useState([1, 1, 1])
     const [currentRoll, setCurrentRoll] = useState('click me')
+    const [currentCash, setCurrentCash] = useState({player1: 200, player2: 200})
     const [tiles, setCurrentTiles] = useState({
         tile1: {cost: "", location: [1, 1], owner: "Start", color: "orange"},
         tile2: {cost: "$20", location: [2, 1], owner: "", color: "white"},
@@ -32,20 +33,25 @@ export default function Monopoly() {
         tile16: {cost: "$80", location: [1, 2], owner: "", color: "white"},
     })
 
-    const locationChecker = (player, location, color) => {
+    const locationChecker = (player, location, color, cash) => {
         Object.keys(tiles).forEach( (tile, index) => {
             if (tiles[tile]['location'][0] === location[0] && tiles[tile]['location'][1] === location[1] && tiles[tile]['owner'] === ''){
-                setCurrentTiles({...tiles, [tile]: {
-                    owner: player, 
-                    location: tiles[tile]['location'], 
-                    cost: tiles[tile]['cost'], 
-                    color: color}
-                })
+                let tempCash = tiles[tile]['cost'].slice(1)
+                let newCash = cash - parseInt(tempCash)
+                if (newCash > 0) {
+                    setCurrentCash({...currentCash, [player]: newCash})
+                    setCurrentTiles({...tiles, [tile]: {
+                        owner: player, 
+                        location: tiles[tile]['location'], 
+                        cost: tiles[tile]['cost'], 
+                        color: color}
+                    })
+                }
             } 
         })
     }
 
-    const playerMovement = (player, location, setter, color) => {
+    const playerMovement = (player, location, setter, color, cash) => {
         // needs to declare the roll insitaly due to delay when settings
         let roll = Math.floor(Math.random() * 3) + 1;
         setCurrentRoll(roll)
@@ -66,7 +72,7 @@ export default function Monopoly() {
                 loc2 = location[1]
                 setter([tempLocation, location[1], location[2]])  
             }
-            locationChecker(player, [loc1, loc2], color)
+            locationChecker(player, [loc1, loc2], color, cash)
             return
         }
         // right side
@@ -83,7 +89,7 @@ export default function Monopoly() {
                 loc2 = tempLocation
                 setter([location[0], tempLocation, location[2]])  
             }
-            locationChecker(player, [loc1, loc2], color)
+            locationChecker(player, [loc1, loc2], color, cash)
             return
         }
         // bottom side
@@ -100,7 +106,7 @@ export default function Monopoly() {
                 loc2 = location[1]
                 setter([tempLocation, location[1], location[2]])  
             }
-            locationChecker(player, [loc1, loc2], color)
+            locationChecker(player, [loc1, loc2], color, cash)
             return
         }
         // left side
@@ -117,14 +123,14 @@ export default function Monopoly() {
                 loc2 = tempLocation
                 setter([location[0], tempLocation, location[2]])  
             }
-            locationChecker(player, [loc1, loc2], color)
+            locationChecker(player, [loc1, loc2], color, cash)
             return
         }   
     }
     
     const onDiceRollHandler = () => {
         // decides on which players go it is
-        (playerGo ? playerMovement('player 1', player1Location, setPlayer1Location, player1Color) : playerMovement('player 2', player2Location, setPlayer2Location, player2Color))
+        (playerGo ? playerMovement('player1', player1Location, setPlayer1Location, player1Color, currentCash['player1']) : playerMovement('player2', player2Location, setPlayer2Location, player2Color, currentCash['player2']))
         setPlayerGo(!playerGo)
         
     }
@@ -166,6 +172,9 @@ export default function Monopoly() {
         <div className="monopoly-container">
            <h1>Monopoly Generator with Grid</h1> 
             <br />
+
+            <h1><span style={{'background': player1Color}}>Player 1 cash: ${currentCash['player1']}</span></h1>
+            <h1><span style={{'background': player2Color}}>Player 2 cash: ${currentCash['player2']}</span></h1>
             
 
         <ul className="monopoly-wrapper"> 
