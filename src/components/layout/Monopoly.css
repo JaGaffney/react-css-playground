@@ -17,10 +17,30 @@
     margin: 0 0 1vw;
 }
 
-.monopoly button{
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    height: 2rem;
+
+.monopoly-rules{
+    display: flex;
+    height: 50vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+}
+.monopoly-rules h3{
+    text-decoration: underline; 
+    font-size: calc(3vw + 10px);
+    padding-bottom: 3rem;
+}
+.monopoly-rules ul{
+    padding-bottom: 2rem;
+    border-bottom: solid 5px black;
+    font-size: calc(1vw + 10px);
+}
+.monopoly-rules li{
+    list-style: disc;
+    
 }
 
 .monopoly-wrapper li{
@@ -137,13 +157,14 @@
 }
 .dice-container h1{
     flex: 1 1 100%;
+    font-size: calc(2vw + 10px);
 }
 .dice{
     flex: 0 0 50%;
     height: 50%;
     width: 10%;
     background: red;
-    font-size: 3rem;
+    font-size: calc(3vw + 10px);
     border: solid 3px black;
     display: flex;
     justify-content: center;
@@ -153,3 +174,8 @@
     user-select: none;
 }
 
+/* @media (max-width: 550px){
+    .monopoly-rules{
+        font-size: 1rem;
+    }
+} */

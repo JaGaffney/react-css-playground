@@ -13,9 +13,9 @@ export default function Monopoly() {
     const [player1Location, setPlayer1Location] = useState([1, 1, 1])
     const [player2Location, setPlayer2Location] = useState([1, 1, 1])
     const [currentRoll, setCurrentRoll] = useState('click me')
-    const [currentCash, setCurrentCash] = useState({player1: 200, player2: 200})
+    const [currentCash, setCurrentCash] = useState({player1: 250, player2: 250})
     const [tiles, setCurrentTiles] = useState({
-        tile1: {cost: "", location: [1, 1], owner: "Start", color: "orange"},
+        tile1: {cost: "", location: [1, 1], owner: "Free", color: "orange"},
         tile2: {cost: "$20", location: [2, 1], owner: "", color: "white"},
         tile3: {cost: "$20", location: [3, 1], owner: "", color: "white"},
         tile4: {cost: "$20", location: [4, 1], owner: "", color: "white"},
@@ -33,6 +33,13 @@ export default function Monopoly() {
         tile16: {cost: "$80", location: [1, 2], owner: "", color: "white"},
     })
 
+    const moneyChecker = (tileCost, rentPlayer, cash) => {
+        let ownerPlayer = (playerGo ? 'player2' : 'player1')
+        let newCashRenter = currentCash[rentPlayer] - tileCost
+        let newCashOwner = currentCash[ownerPlayer] + tileCost
+        setCurrentCash({[rentPlayer]: newCashRenter, [ownerPlayer]: newCashOwner})
+    }
+
     const locationChecker = (player, location, color, cash) => {
         Object.keys(tiles).forEach( (tile, index) => {
             if (tiles[tile]['location'][0] === location[0] && tiles[tile]['location'][1] === location[1] && tiles[tile]['owner'] === ''){
@@ -47,15 +54,20 @@ export default function Monopoly() {
                         color: color}
                     })
                 }
+                return
             } 
+            if (tiles[tile]['location'][0] === location[0] && tiles[tile]['location'][1] === location[1]){
+                let rentPlayer = player
+                let tileCost = (tiles[tile]['cost'] === "" ? 0 : parseInt(tiles[tile]['cost'].slice(1)))
+                moneyChecker(tileCost, rentPlayer, cash)
+            }
         })
     }
-
+    // still needs work as sometimes it appears to not work out the bottom and left side correctley
     const playerMovement = (player, location, setter, color, cash) => {
         // needs to declare the roll insitaly due to delay when settings
         let roll = Math.floor(Math.random() * 3) + 1;
         setCurrentRoll(roll)
-
         let loc1 = 1
         let loc2 = 1
         // top side
@@ -171,12 +183,23 @@ export default function Monopoly() {
     return (
         <div className="monopoly-container">
            <h1>Monopoly Generator with Grid</h1> 
-            <br />
+           <br />
 
+            <div className="monopoly-rules">
+                <h3>How to Play</h3>
+                <ul className="monopoly-rules-list">
+                    <li>Click the dice to start</li>
+                    <li>When a player lands on a tile that is not owned by a previous player they buy that tile</li>
+                    <li>If a player lands on a bought tile they will need to pay the fee</li>
+                    <li>The game is over when a player looses all their money</li>
+                </ul>
+            </div>
+
+            {(currentCash['player1'] < 0 ? alert("Player 2 has won") : "")}
+            {(currentCash['player2'] < 0 ? alert("Player 1 has won") : "")}
             <h1><span style={{'background': player1Color}}>Player 1 cash: ${currentCash['player1']}</span></h1>
             <h1><span style={{'background': player2Color}}>Player 2 cash: ${currentCash['player2']}</span></h1>
             
-
         <ul className="monopoly-wrapper"> 
             {/* <li><span>{tiles.tile1.cost}</span>{tiles.tile1.owner}</li>
             <li><span>{tiles.tile2.cost}</span>{tiles.tile2.owner}</li>
