@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../src/components/layout/Header';
 import Mondrian from '../src/components/layout/Mondrian';
 import Monopoly from '../src/components/layout/Monopoly';
+import Roklama from '../src/components/layout/Roklama';
 import './App.css';
 
 function App() {
@@ -24,6 +25,12 @@ function App() {
 
           <section className="monopoly">
             <Monopoly />
+          </section>
+
+          <div className="bar-break"></div>  
+
+          <section className="monopoly">
+            <Roklama />
           </section>
 
           <div className="bar-break"></div>  
