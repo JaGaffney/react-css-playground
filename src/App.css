@@ -20,6 +20,15 @@
     margin: 0;
   }
 
+  button {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    height: 2rem;
+    width: 15rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
   .bar-break{
   background: var(--primary-color);
   padding: 1.04rem 5vw 0.9rem calc(5vw + 1.2rem);

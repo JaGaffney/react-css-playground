@@ -3,13 +3,13 @@ import Lottie from 'react-lottie';
 
 import './Monopoly.css'
 import gitHubLogo from './animations/github.json'
-import linkedInLogo from './animations/linkedin.json'
+import linkedInLogo from './animations/linkedinBlack.json'
 
 export default function Monopoly() {
+    const player1Color = 'yellow'
+    const player2Color = 'skyblue'
 
     const [playerGo, setPlayerGo] = useState(true) // true for player 1
-    const [player1Color, setPlayer1Color] = useState('yellow')
-    const [player2Color, setPlayer2Color] = useState('skyblue')
     const [player1Location, setPlayer1Location] = useState([1, 1, 1])
     const [player2Location, setPlayer2Location] = useState([1, 1, 1])
     const [currentRoll, setCurrentRoll] = useState('click me')
@@ -129,7 +129,7 @@ export default function Monopoly() {
             console.log('left side')
             let tempLocation = location[1] - roll
             if (tempLocation <= 1) {
-                let newLocation = tempLocation + 4
+                //let newLocation = tempLocation + 4
                 loc1 = tempLocation
                 loc2 = 1
                 setter([tempLocation, 1, 1])

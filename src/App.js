@@ -1,43 +1,35 @@
 import React from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Header from '../src/components/layout/Header';
+import Home from '../src/components/layout/Home';
 import Mondrian from '../src/components/layout/Mondrian';
 import Monopoly from '../src/components/layout/Monopoly';
 import Roklama from '../src/components/layout/Roklama';
 import './App.css';
 
 function App() {
+
+
   return (
-    <div className="App">
-        <div className="wrapper">
-  
-          <header>
-            <Header />   
-          </header>
+    <Router>
+      <div className="App">
+          <div className="wrapper">
 
-          <div className="bar-break"></div>  
+            <Switch>
+              <Route exact path="/" component={Home} />
 
-          <section className="mondrian">
-            <Mondrian />
-          </section>
+              <section className="monopoly">
+                <Route exact path="/mondrian" component={Mondrian} />
+                <Route exact path="/monpoly" component={Monopoly} />
+                <Route exact path="/roklama" component={Roklama} />
+              </section>
+            </Switch>
 
-          <div className="bar-break"></div>  
+          <div className="bar-break"></div>
 
-          <section className="monopoly">
-            <Monopoly />
-          </section>
-
-          <div className="bar-break"></div>  
-
-          <section className="monopoly">
-            <Roklama />
-          </section>
-
-          <div className="bar-break"></div>  
-
-
-        </div>
-    </div>
+          </div>
+      </div>
+    </Router>
   );
 }
 

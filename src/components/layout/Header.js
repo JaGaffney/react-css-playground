@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import Lottie from 'react-lottie';
 import gitHubLogo from './animations/github.json'
 import linkedInLogo from './animations/linkedin.json'
@@ -15,7 +16,7 @@ export default function Header() {
     return (
         <div className="header-wrapper">
 
-            <h1>CSS playground by</h1>
+            <h1 className="header-title">CSS playground by</h1>
             <div className="link-container">
                 <h1><a href="https://jongaffney.tech/">Jon Gaffney</a> {"\u00a0"} 
                     <a href="https://github.com/JaGaffney" 
@@ -51,10 +52,10 @@ export default function Header() {
             </div>
             <div className="nav-list">
                 <ul>
-                    <li>This is a test website</li>
-                    <li>Where I can add snippets</li>
-                    <li>Of websites I have created</li>
-                    <li>To improve my css and js skills</li>
+                    <NavLink to="/mondrian"><li>Mondrian</li></NavLink>
+                    <NavLink to="/monpoly"><li>Monopoly</li></NavLink>
+                    <NavLink to="/roklama"><li>Roklama</li></NavLink>
+                    <NavLink to="/"><li>Soon</li></NavLink>
                 </ul>
             </div>
             <p className="follow-links">

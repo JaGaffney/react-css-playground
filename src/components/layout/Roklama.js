@@ -1,58 +1,91 @@
-import React from 'react'
+import React from 'react';
 
-import './Roklama.css'
+import './Roklama.css';
+import image3 from './images/image3.jpg';
 
 export default function Roklama() {
     return (
         <div className="roklama-container">
-            <h1>Roklama - old knowledge vs new</h1>
-            <p>Link to magazine: <a href="http://www.historygraphicdesign.com/the-modernist-era/a-new-language-of-form/723-roklama-mechano">Roklama Mechano</a></p>
+            <h1>Roklama - Magazine Designs</h1>
+            <p>Attempting to recreate 1920's magazine inside CSS, this magazine has a big focus on Grid elements
+                such as white space, overlapping and columns/rows at differents shapes and sizes.
+            </p>
+            <p>Link to 1920's magazine: <a href="http://www.historygraphicdesign.com/the-modernist-era/a-new-language-of-form/723-roklama-mechano">Roklama Mechano</a></p>
 
-            <div>
-                <h3>Original image</h3>
-                <img src="http://www.historygraphicdesign.com/images/004/l6.jpg" alt="roklama"></img>
+            <div className="roklama-div-container">
+                <div>
+                    <h3>Image 1 - Original </h3>
+                    <img src="http://www.historygraphicdesign.com/images/004/l6.jpg" alt="roklama"></img>
+                </div>
+            
+                <div className="roklama-div">
+                    <h3>Image 1 - My Web Design</h3>
+                    <div className="roklama-wrapper">
+
+                        <h1>P</h1>
+                        <h1>rospekt</h1>
+                        <div><h1>B</h1></div>
+                        <h1>iura</h1>
+                        <h1>Reklama</h1>
+                        <h1><span>M</span></h1>
+                        <div><h1>echano</h1></div>
+
+                        <div className="roklama-square"></div>
+                        <div className="roklama-circle"></div>
+                        <div className="roklama-line"></div>
+
+                    </div>
+                </div>
+
+                <div className="roklama-div">
+                    <h3>Image 1 - My Responsive design tester</h3>
+                    <div className="roklama-wrapper">
+
+                        <h1>F</h1>
+                        <h1>ront end</h1>
+                        <div><h1>D</h1></div>
+                        <h1>eveloper</h1>
+                        <h1>Jon</h1>
+                        <h1><span>G</span></h1>
+                        <div><h1>affney</h1></div>
+
+                        <div className="roklama-square"></div>
+                        <div className="roklama-circle"></div>
+                        <div className="roklama-line"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div className="roklama-div-container">
+                <div>
+                    <h3>Image 2 - Original </h3>
+                    <img src="http://www.historygraphicdesign.com/images/004/l8.jpg" alt="roklama2"></img>
+                </div>
+
+                <div className="roklama-div">
+                    <h3>Image 2 - My Web Design</h3>
+                    <div className="roklama2-wrapper">
+
+                    </div>
+
+                </div>
 
             </div>
             
-            <div className="roklama-div">
-                <h3>My Responsive design</h3>
-                <div className="roklama-wrapper">
-
-                    <h1>P</h1>
-                    <h1>rospekt</h1>
-                    <div><h1>B</h1></div>
-                    <h1>iura</h1>
-                    <h1>Reklama</h1>
-                    <h1><span>M</span></h1>
-                    <div><h1>echano</h1></div>
-
-                    <div className="roklama-square"></div>
-                    <div className="roklama-circle"></div>
-                    <div className="roklama-line"></div>
-
-                </div>
-            </div>
-
-            {/* <div className="roklama-div">
-                <h3>My Responsive design tester</h3>
-                <div className="roklama-wrapper">
-
-                    <h1>F</h1>
-                    <h1>ront end</h1>
-                    <div><h1>D</h1></div>
-                    <h1>eveloper</h1>
-                    <h1>Jon</h1>
-                    <h1><span>G</span></h1>
-                    <div><h1>affney</h1></div>
-
-                    <div className="roklama-square"></div>
-                    <div className="roklama-circle"></div>
-                    <div className="roklama-line"></div>
-
-                </div>
-            </div> */}
+            
+            
 
             <div className="typographie-div">
+                <div>
+                    <h3>Image 3 - Original </h3>
+                    <img style={{width: "100%"}} src={image3} alt="roklama2"></img>
+                </div>
+
+                
+                <h3>Image 3 - My Web Design</h3>
                 <div className="typographie-container">
                     <h1>Jan Tschichold</h1>
                     <h3>
@@ -65,6 +98,7 @@ export default function Roklama() {
                     <div className="empty-box"></div>
                 </div>
             </div>
+
 
 
         </div>
