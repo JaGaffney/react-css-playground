@@ -16,7 +16,22 @@
     min-height: 90vh;
     margin: 0 0 1vw;
 }
-
+.monopoly-title-container{
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+    align-items: center;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+.monopoly-title-container h1{
+    padding-bottom: 1rem;
+}
+.monopoly-title-container p{
+    align-self: start;
+    width: 100%;
+}
 
 .monopoly-rules{
     display: flex;

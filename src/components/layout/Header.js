@@ -18,7 +18,7 @@ export default function Header() {
 
             <h1 className="header-title">CSS playground by</h1>
             <div className="link-container">
-                <h1><a href="https://jongaffney.tech/">Jon Gaffney</a> {"\u00a0"} 
+                <h1 className="header-link"><a href="https://jongaffney.tech/">Jon Gaffney</a> {"\u00a0"} 
                     <a href="https://github.com/JaGaffney" 
                         onMouseEnter={() => setGitHubAnimation(false) } 
                         onMouseLeave={() => setGitHubAnimation(true) }

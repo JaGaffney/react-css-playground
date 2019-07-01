@@ -117,28 +117,31 @@ export default function Mondrian() {
     return (
         <div className="mondrian-container">
 
-            <h1>Mondrian Generator</h1>
-            <h4>Created using grid with dynamic child generation to create a fully responsive grid display</h4>
-            <h4>Colours could be easily be replaced with images/products to create a collage effect</h4>
-
-        <div className="mondrian-button-container">
-            <div className="mondrian-buttons">
-                <button onClick={onShapeHandlerDecrease}>-</button>
-                <h1>Change Size</h1>
-                <button onClick={onShapeHandlerIncrease}>+</button>
+            <div className="mondrian-title-container">
+                <h1>Mondrian Generator</h1>
+                <h4>Created using Grid with dynamic child generation to create a fully responsive grid display</h4>
+                <h4>Colours could be easily be replaced with images/products to create a collage effect</h4>
+                <p></p>
             </div>
 
-            <div className="mondrian-buttons">
-                <button onClick={onBoxHandlerDecrease}>-</button>
-                <h1>Change Ammount</h1>
-                <button onClick={onBoxHandlerIncrease}>+</button>
-            </div>
-   
-            <button onClick={onColourHandler}>Randomize</button>
-            <button onClick={onImageHandler}>{(!imgCreator ? "Turn into images" : "Turn back to colours")}</button>
-            <button onClick={onAnimationsHandler}>{(!animationsCreator ? "Turn into Animation Icons" : "Turn back to colours")}</button>
+            <div className="mondrian-button-container">
+                <div className="mondrian-buttons">
+                    <button onClick={onShapeHandlerDecrease}>-</button>
+                    <h1>Change Size</h1>
+                    <button onClick={onShapeHandlerIncrease}>+</button>
+                </div>
 
-        </div>
+                <div className="mondrian-buttons">
+                    <button onClick={onBoxHandlerDecrease}>-</button>
+                    <h1>Change Ammount</h1>
+                    <button onClick={onBoxHandlerIncrease}>+</button>
+                </div>
+    
+                <button onClick={onColourHandler}>Randomize</button>
+                <button onClick={onImageHandler}>{(!imgCreator ? "Turn into images" : "Turn back to colours")}</button>
+                <button onClick={onAnimationsHandler}>{(!animationsCreator ? "Turn into Animation Icons" : "Turn back to colours")}</button>
+
+            </div>
 
         <ul className="mondrian-wrapper">
             {itemCreation.map((item, index) => {

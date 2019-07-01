@@ -1,6 +1,7 @@
 .mondrian-container{
     justify-content: center;
     margin: 5rem;
+    
 }
 
 .mondrian-wrapper{
@@ -12,7 +13,22 @@
     grid-auto-rows: 100px;
     grid-auto-flow: dense;
 }
-
+.mondrian-title-container{
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+    align-items: center;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+.mondrian-title-container h1{
+    padding-bottom: 1rem;
+}
+.mondrian-title-container p{
+    align-self: start;
+    width: 100%;
+}
 .mondrian-button-container{
     display: flex;
     flex-direction: column;

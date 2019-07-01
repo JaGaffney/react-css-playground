@@ -225,11 +225,13 @@ export default function Monopoly() {
 
     return (
         <div className="monopoly-container">
-           <h1>Monopoly Generator with Grid</h1> 
-           <p>A real world application of this program could be for dynamic adverts/products that move around the page without effecting
-               the flow of the website.
-           </p>
-           <br />
+
+            <div className="monopoly-title-container">
+                <h1>Monopoly Generator with Grid</h1> 
+                <p>A real world application of this program could be for dynamic adverts/products that move around the page without effecting
+                    the flow of the website.
+                </p>
+           </div>
 
             <div className="monopoly-rules">
                 <h1>How to Play</h1>
