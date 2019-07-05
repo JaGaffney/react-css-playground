@@ -5,6 +5,7 @@ import Home from '../src/components/layout/Home';
 import Mondrian from '../src/components/layout/Mondrian';
 import Monopoly from '../src/components/layout/Monopoly';
 import Roklama from '../src/components/layout/Roklama';
+import Dribble from '../src/components/layout/Dribble';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Route exact path="/mondrian" component={Mondrian} />
                 <Route exact path="/monpoly" component={Monopoly} />
                 <Route exact path="/roklama" component={Roklama} />
+                <Route exact path="/dribble" component={Dribble} />
               </section>
             </Switch>
 

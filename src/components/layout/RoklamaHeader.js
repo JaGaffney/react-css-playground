@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Lottie from 'react-lottie';
 import gitHubLogo from './animations/github.json'
-import linkedInLogo from './animations/linkedinBlack.json'
+import linkedInLogo from './animations/linkedin.json'
 
 
 import './RoklamaHeader.css'
@@ -15,12 +15,12 @@ export default function RoklamaHeader() {
     return (
             <div className="roklama__header">
                 <div className="roklama__header-container">
+                    <div className="roklama__header-main-square"></div>
 
                     <h1 className="title-letter">Frontend</h1>
-                    <h1 className="title-word"><span>Web</span><span> Dev</span></h1>
-                    {/* <h1 className="heading-letter">J</h1> */}
+                    <h1 className="title-word"><span>Web Developer</span></h1>
                     <h1 className="heading-word">Jon</h1>
-                    <h1 className="nav-word">CSS:Labs</h1>
+                    <h1 className="nav-word">CSS<span>:</span>Labs</h1>
                     <h1 className="name-letter"><span>G</span></h1>
                     <h1 className="name-word">affney</h1>
 
@@ -29,7 +29,8 @@ export default function RoklamaHeader() {
                             <NavLink to="/mondrian"><li>Mondrian</li></NavLink>
                             <NavLink to="/monpoly"><li>Monopoly</li></NavLink>
                             <NavLink to="/roklama"><li>Roklama</li></NavLink>
-                            <NavLink to="/"><li>Soon</li></NavLink>
+                            <NavLink to="/dribble"><li>Dribble clones</li></NavLink>
+                            <NavLink to="/"><li>coming Soon</li></NavLink>
                         </ul>
                     </div>
 
@@ -66,6 +67,8 @@ export default function RoklamaHeader() {
                             />
                         </a>
                     </div>
+
+                    
 
                 </div>
             </div>

@@ -1,8 +1,12 @@
 :root{
-  --background-color: #f5efef;
+  /* --background-color: #f5efef; */
+  --background-color: #FB9985;
+  --alt-primary-color: #B3E3B5;
   --primary-color: #F05532;
-  --dark-color: #3b3b37;
+  --dark-color: #48484A;
+  --alt-dark-color: #48484A;
   --light-color: white;
+  --alt-shadow-color: rgba(10, 10, 10, 0.8);
 }
 
 /* Main wrapper */
@@ -30,7 +34,7 @@
   }
 
   .bar-break{
-  background: var(--primary-color);
+  background: var(--alt-primary-color);
   padding: 1.04rem 5vw 0.9rem calc(5vw + 1.2rem);
   }
 

@@ -1,10 +1,10 @@
-:root{
-    --background-color: #f5efef;
+/* :root{
+    --alt-primary-color: #B3E3B5;
     --primary-color: #F05532;
-    --alt-dark-color: rgb(10, 10, 10);
+    --alt-dark-color: #48484A;
     --dark-color: #3b3b37;
     --light-color: white;
-}
+} */
 
 
 h1, h2, h3{
@@ -21,6 +21,7 @@ a{
 }
 
 .roklama__header{
+    padding-top: 3rem;
     width: 100%;
     /* display: flex;
     flex-wrap: wrap;
@@ -40,10 +41,19 @@ a{
     height: 60vh;
     width: 60vw;
     display: grid;
-    grid-template-columns: 1rem 1fr min-content 7rem 1rem min-content 1fr 1fr 1rem;
+    grid-template-columns: 1rem 1fr max-content 12rem 1rem min-content 1fr 1fr 1rem;
     grid-template-rows: 1rem min-content 1rem 1rem min-content min-content min-content 2rem 5rem min-content min-content 1rem;
     cursor: context-menu;
 }
+.roklama__header-container > * {
+    z-index: 2;  
+}
+
+header a{
+    border-bottom: none !important;
+}
+
+
 .title-letter{
     justify-self: start;
     grid-column: 4 / 6;
@@ -52,21 +62,21 @@ a{
     font-size: calc(2rem + 1vw);
 }
 .title-word{
-    writing-mode: vertical-lr;
-    grid-column: 6 / 7;
+    /* writing-mode: vertical-rl; */
+    grid-column: 6 / 8;
     grid-row: 4 / 10;
     border-left: solid 0.6rem var(--alt-dark-color);
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: nowrap;
     
 }
 .title-word span{
-    font-size: calc(0.8rem + 1vw);
-    letter-spacing: -3px;
+    font-size: calc(0.6rem + 1vw);
+    /* letter-spacing: -5px; */
     justify-self: center;
     align-self: center;
-    color: var(--primary-color);
+    color: var(--light-color);
     text-orientation: upright;
     
 
@@ -100,6 +110,9 @@ a{
     font-weight: 900; 
     letter-spacing: -3px;
 }
+.nav-word span{
+    color: var(--alt-primary-color);
+}
 .name-letter{
     grid-column: 4 / 7;
     grid-row: 11 / 12;
@@ -122,7 +135,6 @@ a{
     font-weight: 900;
     letter-spacing: 1px;
     align-self: start;
-    
 }
 
 .roklama__header-square{
@@ -134,9 +146,10 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    clip-path: polygon(0% 0%, 100% 4%, 91% 97%, 3% 85%);
 }
 .roklama__header-circle{
-    background-color: var(--primary-color);
+    background-color: var(--alt-dark-color);
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -153,6 +166,17 @@ a{
     grid-column: 5;
     grid-row: 4 / 9;
     justify-self: end;
+    
+}
+.roklama__header-main-square{
+    height: 90%;
+    width: 100%;
+    background-color: var(--alt-primary-color);
+    grid-column: 3 / span 5;
+    grid-row: 2 / 12;
+    z-index: 1;
+    transform: rotate(-20deg);
+    clip-path: polygon(0% 0%, 100% 3%, 98% 99%, 3% 93%);
 }
 
 .roklama-nav{
@@ -161,7 +185,7 @@ a{
     font-weight: 600;
     line-height: 2;
     align-self: end;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .roklama-nav li {
@@ -170,13 +194,14 @@ a{
     padding: 2px 2px;
     text-transform: uppercase;
     text-align: end;
+    color: var(--light-color);
 }
 .roklama-nav ul:last-child {
     border-bottom: 5px solid var(--alt-dark-color);
 }
 .roklama-nav li:hover{
-    color: var(--light-color);
-    background-color: var(--primary-color);
+    color: var(--alt-dark-color);
+    background-color: var(--alt-primary-color);
     cursor: pointer;
 }
 
