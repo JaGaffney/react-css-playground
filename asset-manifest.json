@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/react-css-playground/static/css/main.8b8416f5.chunk.css",
-    "main.js": "/react-css-playground/static/js/main.89822451.chunk.js",
-    "main.js.map": "/react-css-playground/static/js/main.89822451.chunk.js.map",
+    "main.css": "/react-css-playground/static/css/main.797784bb.chunk.css",
+    "main.js": "/react-css-playground/static/js/main.3a06232a.chunk.js",
+    "main.js.map": "/react-css-playground/static/js/main.3a06232a.chunk.js.map",
     "runtime~main.js": "/react-css-playground/static/js/runtime~main.2fc70888.js",
     "runtime~main.js.map": "/react-css-playground/static/js/runtime~main.2fc70888.js.map",
-    "static/js/2.3394b0f8.chunk.js": "/react-css-playground/static/js/2.3394b0f8.chunk.js",
-    "static/js/2.3394b0f8.chunk.js.map": "/react-css-playground/static/js/2.3394b0f8.chunk.js.map",
+    "static/js/2.2dac9de7.chunk.js": "/react-css-playground/static/js/2.2dac9de7.chunk.js",
+    "static/js/2.2dac9de7.chunk.js.map": "/react-css-playground/static/js/2.2dac9de7.chunk.js.map",
     "index.html": "/react-css-playground/index.html",
-    "precache-manifest.51def72f46b53a6cf5bd4266161b48cd.js": "/react-css-playground/precache-manifest.51def72f46b53a6cf5bd4266161b48cd.js",
+    "precache-manifest.8594a32e992985aa47c4cc970dede8aa.js": "/react-css-playground/precache-manifest.8594a32e992985aa47c4cc970dede8aa.js",
     "service-worker.js": "/react-css-playground/service-worker.js",
-    "static/css/main.8b8416f5.chunk.css.map": "/react-css-playground/static/css/main.8b8416f5.chunk.css.map",
-    "static/media/image3.jpg": "/react-css-playground/static/media/image3.147a6686.jpg"
+    "static/css/main.797784bb.chunk.css.map": "/react-css-playground/static/css/main.797784bb.chunk.css.map",
+    "static/media/image3.jpg": "/react-css-playground/static/media/image3.147a6686.jpg",
+    "static/media/mondrian.jpg": "/react-css-playground/static/media/mondrian.550ea0e1.jpg",
+    "static/media/monopoly.jpg": "/react-css-playground/static/media/monopoly.ccad8da6.jpg"
   }
 }
