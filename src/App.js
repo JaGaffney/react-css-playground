@@ -21,7 +21,7 @@ function App() {
 
               <section className="monopoly">
                 <Route exact path="/mondrian" component={Mondrian} />
-                <Route exact path="/monpoly" component={Monopoly} />
+                <Route exact path="/monopoly" component={Monopoly} />
                 <Route exact path="/roklama" component={Roklama} />
                 <Route exact path="/dribble" component={Dribble} />
               </section>

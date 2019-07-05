@@ -53,7 +53,7 @@ export default function Header() {
             <div className="nav-list">
                 <ul>
                     <NavLink to="/mondrian"><li>Mondrian</li></NavLink>
-                    <NavLink to="/monpoly"><li>Monopoly</li></NavLink>
+                    <NavLink to="/monopoly"><li>Monopoly</li></NavLink>
                     <NavLink to="/roklama"><li>Roklama</li></NavLink>
                     <NavLink to="/dribble"><li>Dribble clones</li></NavLink>
                     <NavLink to="/"><li>Soon</li></NavLink>

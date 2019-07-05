@@ -1,6 +1,7 @@
 :root{
   /* --background-color: #f5efef; */
   --background-color: #FB9985;
+  --alt-background-color: #f88070;
   --alt-primary-color: #B3E3B5;
   --primary-color: #F05532;
   --dark-color: #48484A;
@@ -34,7 +35,7 @@
   }
 
   .bar-break{
-  background: var(--alt-primary-color);
+  background: var(--alt-dark-color);
   padding: 1.04rem 5vw 0.9rem calc(5vw + 1.2rem);
   }
 

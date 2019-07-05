@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Lottie from 'react-lottie';
 
 // animations
@@ -26,6 +26,10 @@ export default function Mondrian() {
     const [imgCreator, setImageCreator] = useState(false)
     const [animationsCreator, setAnimationsCreator] = useState(false)
 
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     // creates the squares with styles and size
     const imageGenerator = () => {
         return <img src={`https://unsplash.it/2000/10` + Math.floor(Math.random() * 9) + 1} style={{height: "100%", width: "100%", objectFit: "cover"}} alt=""></img>
