@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './Roklama.css';
 import image3 from './images/image3.jpg';
 
 export default function Roklama() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     return (
         <div className="roklama-container">
 
@@ -13,6 +18,7 @@ export default function Roklama() {
                     such as white space, overlapping and columns/rows at differents shapes and sizes.
                 </p>
                 <p>Link to 1920's magazine: <a href="http://www.historygraphicdesign.com/the-modernist-era/a-new-language-of-form/723-roklama-mechano">Roklama Mechano</a></p>
+                <i>*Please note, I don't speak Polish and I am using the text as design only, I don't know what anything says but from Google translate it appears to be nothing offensive</i>
             </div>
             <div className="roklama-div-container">
                 <div>

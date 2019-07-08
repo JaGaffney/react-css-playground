@@ -29,8 +29,7 @@ export default function RoklamaHeader() {
                             <NavLink to="/mondrian"><li>Mondrian</li></NavLink>
                             <NavLink to="/monopoly"><li>Monopoly</li></NavLink>
                             <NavLink to="/roklama"><li>Roklama</li></NavLink>
-                            <NavLink to="/dribble"><li>Dribble clones</li></NavLink>
-                            <NavLink to="/"><li>coming Soon</li></NavLink>
+                            <NavLink to="/dribble"><li>Dribble clones (soon)</li></NavLink>
                         </ul>
                     </div>
 

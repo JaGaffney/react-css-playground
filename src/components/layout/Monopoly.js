@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Lottie from 'react-lottie';
 
 import './Monopoly.css'
@@ -6,6 +6,11 @@ import gitHubLogo from './animations/github.json'
 import linkedInLogo from './animations/linkedinBlack.json'
 
 export default function Monopoly() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const player1Color = 'yellow'
     const player2Color = 'skyblue'
 

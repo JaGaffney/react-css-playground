@@ -1,11 +1,3 @@
-/* :root{
-    --background-color: #f5efef;
-    --primary-color: #F05532;
-    --alt-dark-color: rgba(10, 10, 10, 0.8);
-    --dark-color: #3b3b37;
-    --light-color: white;
-} */
-
 
 .header-wrapper{
     display: grid;
@@ -124,7 +116,7 @@ header h1{
         grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
         grid-template-rows: auto 1fr 1fr auto auto;
         transform: rotate(0deg);
-        padding-bottom: 20rem;
+        padding-bottom: 0rem;
     }
 }
 
